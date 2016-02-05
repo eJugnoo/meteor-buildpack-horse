@@ -98,6 +98,10 @@ if [ -e "$COMPILE_DIR"/app/programs/server/package.json ]; then
   cd "$COMPILE_DIR"/app/programs/server && npm install
 fi
 
+echo "-----> Copying Job Server Files"
+mkdir -p $COMPILE_DIR/app
+cp -r "$APP_SOURCE_DIR/.jobs" "$COMPILE_DIR/app/jobs"
+
 #
 # Environment
 #
