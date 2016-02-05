@@ -102,6 +102,11 @@ echo "-----> Copying Job Server Files"
 mkdir -p $COMPILE_DIR/app
 cp -r "$APP_SOURCE_DIR/.jobs" "$COMPILE_DIR/app/jobs"
 
+echo "-----> Building Job Server"
+if [ -e "$COMPILE_DIR"/app/jobs/package.json ]; then
+  cd "$COMPILE_DIR"/app/jobs && npm install
+fi
+
 #
 # Environment
 #
